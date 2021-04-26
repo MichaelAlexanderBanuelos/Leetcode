@@ -7,12 +7,12 @@ const canVisitAllRooms = function(rooms) {
         for(let i = 0; i < room.length; i++){
             let key = room[i];
             if (!visited[key]) {
-                roomsToVisit.unshift(rooms[key]);
+                roomsToVisit.push(rooms[key]);
             }
             visited[key] = true;
         }
     }
     
-    const visitedCount = visited.filter((room) => !!room).length;
+    const visitedCount = visited.filter((room) => room).length;
     return rooms.length === visitedCount;
 };
